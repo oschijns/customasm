@@ -580,7 +580,7 @@ pub fn parse_output_format(
 						return Ok(string);
 					}
 				}
-				
+
 				report.error(
 					format!(
 						"invalid format argument `{},{}:{}`",
@@ -614,7 +614,7 @@ pub fn parse_output_format(
 					params.remove(param_id);
 					return Ok(false);
 				}
-				
+
 				report.error(
 					format!(
 						"invalid format argument `{},{}:{}`",

@@ -264,10 +264,10 @@ impl util::BitVec
 		result.push_str("END;");
 		result
 	}
-	
-	
+
+
 	pub fn format_intelhex(&self, address_unit: usize) -> String
-	{	
+	{
 		let mut result = String::new();
 
 		let mut flush_bytes = |
@@ -298,7 +298,7 @@ impl util::BitVec
 					result.push_str(&format!("{:02X}", byte));
 					checksum = checksum.wrapping_add(byte);
 				}
-				
+
 				result.push_str(&format!("{:02X}", (!checksum).wrapping_add(1)));
 				result.push('\n');
 			}
@@ -312,7 +312,7 @@ impl util::BitVec
 			let mut read_index = block.offset;
 			let mut accum_index = block.offset;
 			let mut accum_bytes = Vec::<u8>::new();
-	
+
 			while read_index < block.offset + block.size
 			{
 				let mut byte: u8 = 0;
@@ -366,7 +366,7 @@ impl util::BitVec
 					else
 						{ ('a' as u8 + digit - 10) as char }
 				};
-				
+
 				result.push(c);
 			}
 
@@ -553,12 +553,12 @@ impl util::BitVec
 		}
 
 		result.push_str(&format!(" {:>1$} |", "outp", outp_width + outp_bit_width + 1));
-		
+
 		if options.addr_base == 16
 			{ result.push_str(&format!(" {:>1$} |", "addr", addr_width)); }
 		else
 			{ result.push_str(&format!(" {:>1$} |", format!("addr (base {})", options.addr_base), addr_width)); }
-		
+
 		result.push_str(&format!(" data (base {})", options.base));
 		result.push_str("\n");
 		result.push_str("\n");
@@ -636,7 +636,7 @@ impl util::BitVec
 
 		result
 	}
-	
+
 
 	// Turing Complete is a game in which you advance from nand gates to
 	// computer architecture. Its assembly editor uses `#` comments,
